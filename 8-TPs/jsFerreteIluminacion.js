@@ -14,6 +14,7 @@ function CalcularPrecio ()
  	var preciocondescuento;
  	var preciobruto;
  	var marca;
+ 	var preciofinal;
  	cantidadlamparas=document.getElementById('Cantidad').value;
  	marca=document.getElementById('Marca').value;
  	preciobruto=cantidadlamparas*35;
@@ -54,7 +55,13 @@ function CalcularPrecio ()
  			}
  			if(marca=="“FelipeLamparas”")
  			{
- 				
+ 				preciobruto*0.90;
+ 			}
+ 			else
+ 			{
+ 				preciobruto*0.95;
  			}
  		}
+ 		
+       
 }
