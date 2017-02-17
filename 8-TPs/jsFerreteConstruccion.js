@@ -12,7 +12,7 @@ function Rectangulo ()
 	largodelterreno=document.getElementById('Largo').value;
 	anchodelterreno=document.getElementById('Ancho').value;
 	resultado=largodelterreno*anchodelterreno*3;
-	alert("Se necesita de alambre" + resultado);
+	alert(resultado);
 
 
 }
@@ -23,7 +23,7 @@ function Circulo ()
 	radio=document.getElementById('Radio').value;
 	radio=3.14
 	resultado=radio*3;
-	alert("Se necesita de alambre" + resultado);
+	alert(resultado);
 
 }
 function Materiales () 
@@ -38,9 +38,9 @@ function Materiales ()
 	cemento=2;
 	cal=3;
 	resultado=largodelterreno*anchodelterreno*cemento;
-	alert("Se necesitan de cemento"  +  resultado);
+	alert("Se necesitan de cemento" +resultado);
 	resultado=largodelterreno*anchodelterreno*cal;
-	alert("Se necesitan de cal"  +  resultado);
+	alert("Se necesitan de cal" +resultado);
 	
 
 }
