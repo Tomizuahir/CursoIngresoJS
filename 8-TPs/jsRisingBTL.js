@@ -9,5 +9,18 @@ F.	Nacionalidad, “A” para argentinos, “E” para extranjeros, “N” para
  */
 function ComenzarIngreso () 
 {
- 
+ var edad;	 
+ var sexo; 
+ var estadocivil;
+ var sueldobruto;
+ var numerodelegajo;
+ var nacionalidad; 
+ var contador=0; 
+ while(edad>17 || <90)
+ {
+ 	contador=contador+1;
+ 	edad=prompt("ingrese edad");
+ 	
+ }
+  alert("bienvenido");
 }
