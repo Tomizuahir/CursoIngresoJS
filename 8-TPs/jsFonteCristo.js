@@ -11,3 +11,35 @@ function ComenzarIngreso ()
 {
  	
 }
+function NumerosPrimos()
+{
+	var numeroingresado;
+	var noesprimo;
+	var esprimo;
+	var recorrido;
+	var anteriores;
+	numeroingresado=document.getElementById('numero').value;
+	numeroingresado=parseInt(numeroingresado);
+
+	for(recorrido=2;recorrido<=numeroingresado;recorrido++)
+	{
+		noesprimo="no"
+		for(anteriores=2;anteriores<recorrido;anteriores++)
+		{
+			if(recorrido%anteriores==0)
+			{
+				noesprimo="si";
+				break;
+			}
+			
+		}
+		if (noesprimo=="si") 
+			{
+			
+			}
+			else
+			{
+				console.log("el numero es primo" + recorrido);
+			}
+	}
+}
