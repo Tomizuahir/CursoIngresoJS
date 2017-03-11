@@ -11,17 +11,16 @@ function Mostrar()
 		contador=contador+1;
 		numero=prompt("ingrese numero");
 		numero=parseInt(numero);
-		if(numero>0)
+		if(numero>=0)
 		{
 			positivo=positivo+numero;
 		}
 		else
 		{
 			negativo=negativo*numero;
-			respuesta=prompt("ingrese si para continuar");
-
 		}
-
+		
+		respuesta=prompt("ingrese si para continuar");
 	}
 
 
