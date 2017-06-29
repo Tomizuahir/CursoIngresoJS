@@ -8,8 +8,8 @@ function sumar()
 	var resultado;
 	numerouno=document.getElementById('numeroUno').value;
 	numerodos=document.getElementById('numeroDos').value;
-	numerouno=parseInt("numerouno");
-	numerodos=parseInt("numerodos");
+	numerouno=parseInt(numerouno);
+	numerodos=parseInt(numerodos);
 	resultado=numerouno+numerodos;
 	alert("la suma es "+resultado);
 
