@@ -2,9 +2,12 @@
 y luego mostrarlo por 'Alert' al presionar el botón  'MOSTRAR'*/
 function Mostar()
 {
-	var nombre;
-	nombre=document.getElementById('elNombre').value;
-	alert(nombre);
+	var dato=0;
+	/*dato="tomas";
+	alert(dato);*/	
+	//dato=document.getElementById('elNombre').value;
+	//alert(dato);
+	 
 }
 
 
