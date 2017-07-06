@@ -1,7 +1,6 @@
 function Mostrar()
 {
-	var random;
-	random=Math.floor((Math.random() * 10) + 1);
-	alert(random);
-
+	var edad;
+	edad=Math.floor((Math.random() * 10) + 1);
+	alert(edad);
 }//FIN DE LA FUNCIÓN

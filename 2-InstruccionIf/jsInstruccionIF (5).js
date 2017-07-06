@@ -7,6 +7,7 @@ function Mostrar()
 		alert("no es adolescente");
 	}
 	
+	
 
 
 
