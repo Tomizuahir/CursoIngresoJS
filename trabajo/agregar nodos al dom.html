@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<meta>
+			<title> Document Object Model  </title>	
+
+	</head>
+		<body>
+			<ol id="lista">
+				<li id="primero"> Un texto es una composición de signos codificados en un sistema de escritura (como ser un alfabeto) que forma una unidad de sentido.</li>
+
+				<li> Un texto es una composición de signos codificados en un sistema de escritura (como ser un alfabeto) que forma una unidad de sentido.</li>
+			</ol>
+
+			<script>
+
+			/*var primerelemento = document.getElementById('primero');
+			primerelemento.innerHTML = "Nuevo texto <i>tomas</i>";*/	
+				var elemento = document.createElement("li");
+				var contenido = document.createTextNode("Nuevo texto");
+
+				elemento.appendChild(contenido);
+
+				var padre = document.getElementsByTagName('li')[0].parentNode;
+				referencia = document.getElementsByTagName('li')[0];
+				padre.removeChild(referencia);
+
+				/*var padre = document.getElementsByTagName('li')[0].parentNode;
+				padre.replaceChild(elemento, document.getElementsByTagName('li')[0]);
+
+				/*var padre = document.getElementsByTagName('li')[0].parentNode;
+
+				var hijo = document.getElementsByTagName("li")[0]
+				padre.insertBefore(elemento, hijo); //toma el elemento hasta el inicio y tiene que tener una referencia
+				//document.body.appendChild(elemento);*/
+
+			</script>
+		</body>
+</html>

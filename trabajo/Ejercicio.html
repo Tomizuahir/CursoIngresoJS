@@ -1,64 +1,192 @@
 <html>																												       
 	<body>
-		<form>
-			<table border="1"> 
+		<form id="formulario" action="https://www.google.com.ar/?gfe_rd=cr&ei=nUWLWY7kCInX8gfSkIWADg">
+			<table border="0"> 
+				<link rel="stylesheet" type="text/css" href="estilos.css">
 				<tr>
 					<td>
 						
-							<blockquote><label for="Apellido y nombre">Apellido y nombre</label> 
-								<br>
-								<input type="text" placeholder="Apellido y nombre del usuario" size="23">
-								<br>
-								<label for="Usuario">Usuario</label>
-								<br>
-								<input type="text" placeholder="Nombre del usuario" size="23">
-								<br>
-								<label for="password">Password</label>
-								<br>
-								<input type="password" placeholder="Password del usuario" size="23">
-								<br>
-								<label for="genero">Genero</label>
-								<br>
-								<input type="radio"> Hombre <input type="radio"> Mujer
-								<br>
-								<label for="email">Correo</label>
-								<br>
-								<input type="email" placeholder="Email del usuario" size="23">
-								<br>
-								<label for="fecha de nacimiento">Fecha de nacimiento</label>
-								<br>
-								<input type="fecha" placeholder="Fecha de nacimiento del usuario" size="24">
-								<br>
-								<label for="notificaciones">Notificaciones</label>
-								<br>
-								<input type="checkbox"><label>Ofertas</label>
-								<br>
-								<input type="checkbox"><label >Nuevas publicaciones</label>
-								<br>
-								<input type="checkbox"><label>Denuncias</label>
-								<br>	
-								<input type="checkbox"><label>Comentarios</label>
-							</blockquote>
-							<td>
-								<label>Adjunto foto:</label>
-								<br>
-								<input type="file">
-								<br> <br>
-								<label>categoria usuario:</label>
-								<br>
-
-								<select> 
-									<option value="Usuario abonado">Usuario abonado</option>
-									<option value="Usuario ocacional">Usuario ocacional</option>
-									<option value="Usuario invitado">Usuario invitado</option>
-								</select>
-								<br><br>
-								
-
-							</td>
+						<blockquote><label for="Apellido y nombre">Apellido y nombre</label> 
+							<br><br>
+							<input type="text" placeholder="Apellido y nombre del usuario" size="23" id="nombre" name="nombre">
+							<br>
+							<label for="Usuario">Usuario</label>
+							<br>
+							<br>
+							<input type="text" placeholder="Nombre del usuario" size="23" id="usuario" name="usuario">
+							<br>
+							<label for="password">Password</label>
+							<br>
+							<br>
+							<input type="password" placeholder="Password del usuario" size="23" id="password" name="password">
+							<br>
+							<label for="genero">Genero</label>
+							<br>
+							<input type="radio"> Hombre <input type="radio"> Mujer
+							<br>
+							<label for="email">Correo</label>
+							<br>
+							<br>
+							<input type="email" placeholder="Email del usuario" size="23" id="email" name="email">
+							<br>
+							<label for="fecha de nacimiento">Fecha de nacimiento</label>
+							<br>
+							<br>
+							<input type="fecha" placeholder="Fecha de nacimiento del usuario" size="24" id="fecha" name="fecha">
+							<br>
+							<label for="notificaciones">Notificaciones</label>
+							<br>
+							<br>
+							<input type="checkbox"><label>Ofertas</label>
+							<br>
+							<input type="checkbox"><label >Nuevas publicaciones</label>
+							<br>
+							<input type="checkbox"><label>Denuncias</label>
+							<br>	
+							<input type="checkbox"><label>Comentarios</label>
+						</blockquote>
 					</td>		
+					<td>
+							<label>Adjunto foto:</label>
+							<br>
+							<input type="file">
+							<br> <br>
+							<label>Categoria usuario:</label>
+							<br><br>
+							<select id="tipoUsuario" name="tipoUsuario"> 
+								<option value="usuarioAbonado">Usuario abonado</option>
+								<option value="usuarioOcasional">Usuario ocasional</option>
+								<option value="usuarioInvitado">Usuario invitado</option>
+							</select>
+							<br><br>
+							<fieldset id="soloAbonados">
+								<legend> Solo para abonados: </legend>
+								<label>Numero de tarjeta</label>
+								<input type="numero" placeholder="Numero de tarjeta" size="24" id="tarjeta" name="tarjeta" maxlength="16">
+								<br><br>
+								<label>Codigo</label>
+								<input type="texto" placeholder="Codigo" size="24" id="codigo" name="codigo">
+								<br><br>
+								<input type="radio"> plan 1 <input type="radio"> plan 2 <input type="radio"> plan 3
+								<br>
+								<input type="radio"> plan 4 <input type="radio"> plan 5 <input type="radio"> plan 6
+								<br> <br>
+							</fieldset>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<br>
+						<center>
+							<input type="button" id="boton" name="boton" value="enviar">
+							&nbsp;&nbsp;&nbsp;
+							<input type="reset" id="vaciar" name="vaciar" value="limpiar">
+
+						</center>
+						<br>
+					</td>
 				</tr>
 			</table>
+			 
 		</form>
+		<script>
+		(function(){
+			var validacion = function(email){
+				var nombre;
+				var usuario;
+				var password;
+				var tarjeta;
+				var codigo;
+				var tipoUsuario = document.getElementById('tipoUsuario');
+				var email = document.getElementById('email');
+				
+				var exprecion = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+				codigo = document.getElementById('codigo');
+				tarjeta = document.getElementById("tarjeta");
+				nombre = document.getElementById('nombre');
+				usuario = document.getElementById('usuario');
+				password = document.getElementById('password');
+				
+				//var boton = document.getElementById('boton');
+				
+				if(nombre.value.length < 6)
+				{
+					alert("el campo Apellido y nombre es requerido y debe tener al menos 6 caracteres");
+					nombre.focus();
+					return false;
+				}
+				
+				if(usuario.value.length < 6)
+				{
+					alert("el campo usuario debe tener al menos 6 caracteres");
+					usuario.focus();
+					return false;
+				}
+					
+				if(password.value < 8)
+				{
+					alert("el campo password debe tener al menos 8 caracteres");
+					password.focus();
+					return false;
+				}
+
+				if(email.value.length == 0)
+				{
+					alert("Este campo es requerido");
+					return false;
+				}
+
+				if(!exprecion.test(email))
+				{
+					alert("error")
+				}
+
+				if(tipoUsuario.value == "usuarioAbonado")
+				{
+					if(tarjeta.value.length !=16)
+					{
+						alert("El numero de tarjeta debe tener 16 digitos solamente");
+						return false;
+					}
+					if(codigo.value.length !=3)
+					{
+						alert("El codigo debe tener 3 digitos solamente ");
+						return false;
+					}
+					
+				}
+
+				
+								
+				var formulario = document.getElementById("formulario");
+				formulario.submit();
+
+
+			};
+			var boton = document.getElementById('boton');
+			boton.addEventListener("click", validacion);
+
+			var controlarTipoUsuario = function(){
+				var abonados = document.getElementById('tipoUsuario');
+				if(abonados.value == "usuarioAbonado"){
+					document.getElementById('soloAbonados').style.display = "block";
+				}
+				else
+				{
+					document.getElementById('soloAbonados').style.display = "none";
+				}
+			};
+
+			var tipoUsuario = document.getElementById('tipoUsuario');
+			tipoUsuario.addEventListener("change", controlarTipoUsuario);
+
+			var vaciar = document.getElementById('vaciar');
+
+
+		}())
+		
+			
+		</script>
 	</body>
 </html>

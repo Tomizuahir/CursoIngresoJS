@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<meta>
+			<title> Eventos </title>	
+
+	</head>
+		<body>
+			<!--<button id="boton">Boton</button>-->
+			<a id="boton" href="http://www.falconmasters.com">Falconmasteres</a>
+			<input type="text" id="input">
+			<script>
+			(function(){
+				var saludo = function(e){
+					//console.log("Este evento es de tipo: "+ e.type);//se conoce el tipo de evento y con target es el objetivo al que le estamos haciendo el evento
+					console.log("oh yeah");
+					e.preventDefault();//evita mandarte a la pagina del link
+				};
+				var boton = document.getElementById('boton');
+				boton.addEventListener("click", saludo);
+				//boton.removeEventListener("click", saludo);
+					
+				
+			
+			
+			}())
+			</script>
+		</body>
+</html>

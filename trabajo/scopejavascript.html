@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<meta>
+		<title> Scope Javascript</title>
+	</head>
+	<body>
+		<script>
+		//Global: podemos acceder a estas variables en cualquier parte del codigo
+		//Local: Variables creadas dentro de una funcion, solo pueden ser accedidas 
+
+		/*var variableglobal = "esto es global";
+
+		var mifuncion = function(){
+			//var variablelocal = "Esto es local";
+			alert(variablelocal);
+
+			var funcionlocal = function(){
+				var variablelocal = "esta es variable local dentro de funcion local";
+				//alert(variablelocal);
+			}
+			funcionlocal();
+
+
+			//variableglobal = "Esto es global, modificada";
+			//alert(variableglobal);
+		}
+		mifuncion();
+
+		//alert(variableglobal);*/
+
+		//Protege mi codigo con una funcion autoinvocada
+		/*(function(){
+			var variableglobal = "esto es global";
+
+		var mifuncion = function(){
+			//var variablelocal = "Esto es local";
+			alert(variablelocal);
+
+			var funcionlocal = function(){
+				var variablelocal = "esta es variable local dentro de funcion local";
+				//alert(variablelocal);
+			}
+			funcionlocal();
+
+
+			//variableglobal = "Esto es global, modificada";
+			//alert(variableglobal);
+		}
+		mifuncion();
+
+		//alert(variableglobal);
+		}())*/
+
+		var texto = "tomas hiese";
+		//var nuevotexto= texto.length; //retorna el numero de caracteres de una cadena de texto
+
+		//var nuevotexto= texto.substring(3); //corta la cadena de texto
+
+		//var nuevotexto= texto.substr(0, 5); //corta el resto de la cadena de texto
+
+		//var nuevotexto= texto.indexOf("a"); //indica la posicion de la letra o caracter
+
+		//var nuevotexto= texto.lastIndexOf("a"); //hace lo mismo pero indica de atras para adelante la posicion de la letra o caracter
+
+		//var nuevotexto= texto.replace(texto,"tomila12")// remplaza una cadena de texto por otra
+
+		//var nuevotexto= texto.toUpperCase();//transforma la cadena de texto a mayuscula
+
+		var nuevotexto= texto.toLowerCase();//transforma la cadena de texto a minuscula
+		alert(nuevotexto);
+
+
+
+		</script>	
+
+
+	</body>
+
+
+</html>
